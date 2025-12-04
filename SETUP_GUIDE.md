@@ -450,7 +450,7 @@ CREATE POLICY "Public select access" ON click_logs FOR SELECT USING (true);
    - **Branch**: `main` 선택
    - **Folder**: `/ (root)` 선택
 4. **Save** 클릭
-5. 몇 분 후 `https://YOUR_USERNAME.github.io/bni-goyang/` 접속 가능
+5. 몇 분 후 `https://YOUR_USERNAME.github.io/bni-goyang/` 접속 가능 
 
 **3단계: Supabase 설정 (config.js 수정)**
 1. `config.js` 파일 열기
