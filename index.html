@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNI 고양지역 최강챕터 | 고양·일산 대표 비즈니스 네트워크</title>
+  <meta name="description" content="고양시·일산 지역 대표 비즈니스 네트워크 플랫폼. 홈페이지 제작, 앱 개발, 법률, 세무, 건축 등 각 분야 전문가를 만나보세요.">
+  <meta name="keywords" content="BNI 고양, BNI 최강챕터, 고양시 비즈니스, 일산 비즈니스, 조찬모임, 홈페이지 제작, 앱 개발, 변호사, 세무사, 건축사">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="BNI 고양지역 최강챕터 | 고양·일산 대표 비즈니스 네트워크">
+  <meta property="og:description" content="고양시·일산 지역 대표 비즈니스 네트워크 플랫폼. 각 분야 전문가를 만나보세요.">
+  <meta property="og:type" content="website">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container flex-between">
+        <span><i class="fas fa-map-marker-alt"></i> 고양·일산 지역 대표 비즈니스 네트워크</span>
+        <span class="hidden" style="display: none;">
+          <a href="tel:010-0000-0000"><i class="fas fa-phone"></i> 문의: 010-0000-0000</a>
+        </span>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
+          <div>
+            <div class="logo-text">BNI 최강챕터</div>
+            <div class="logo-sub">고양·일산 비즈니스 네트워크</div>
+          </div>
+        </a>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">홈</a></li>
+            <li><a href="category.html" class="nav-link">전문가 찾기</a></li>
+            <li><a href="members.html" class="nav-link">멤버 전체보기</a></li>
+            <li><a href="visitor.html" class="nav-link">비지터 초대</a></li>
+            <li><a href="about.html" class="nav-link">BNI 소개</a></li>
+          </ul>
+        </nav>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="logo-text">BNI 최강챕터</span>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link active">홈</a></li>
+      <li><a href="category.html" class="mobile-nav-link">전문가 찾기</a></li>
+      <li><a href="members.html" class="mobile-nav-link">멤버 전체보기</a></li>
+      <li><a href="visitor.html" class="mobile-nav-link">비지터 초대</a></li>
+      <li><a href="about.html" class="mobile-nav-link">BNI 소개</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge"><i class="fas fa-star"></i> 고양·일산 No.1 비즈니스 네트워크</span>
+      <h1>BNI 고양지역 최강챕터</h1>
+      <p>홈페이지 제작 · 앱 개발 · 법률 · 세무 · 건축<br>각 분야 최고의 전문가를 한 곳에서 만나보세요</p>
+      <div class="cta-buttons">
+        <a href="category.html" class="cta-btn-white">전문가 찾기</a>
+        <a href="visitor.html" class="cta-btn-outline">조찬모임 참석하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Slider -->
+  <section class="section">
+    <div class="container">
+      <div class="banner-slider">
+        <div class="banner-track" id="bannerTrack">
+          <!-- Banners loaded dynamically -->
+        </div>
+        <button class="banner-nav prev" id="bannerPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="banner-nav next" id="bannerNext"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="banner-dots" id="bannerDots"></div>
+    </div>
+  </section>
+
+  <!-- Category Section -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2>업종별 전문가 바로가기</h2>
+        <p>필요한 서비스의 전문가를 빠르게 찾아보세요</p>
+      </div>
+      
+      <div class="category-grid" id="categoryGrid">
+        <!-- Categories loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Search & Filter Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>고양·일산 추천 전문가</h2>
+        <p>BNI 최강챕터의 검증된 전문가를 만나보세요</p>
+      </div>
+      
+      <!-- Main Content with Sidebar -->
+      <div class="content-with-sidebar">
+        <!-- Main Content -->
+        <div class="main-content-area">
+          <!-- Search Box -->
+          <div class="search-box">
+        <input type="text" class="search-input" id="searchInput" placeholder="회사명, 이름, 업종으로 검색...">
+        <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+      
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">전체</button>
+        <button class="filter-tab" data-region="고양">고양</button>
+        <button class="filter-tab" data-region="일산">일산</button>
+      </div>
+      
+          <!-- Member Grid -->
+          <div class="member-grid" id="memberGrid">
+            <!-- Members loaded dynamically -->
+          </div>
+          
+          <div class="text-center mt-8">
+            <a href="members.html" class="btn btn-secondary btn-lg">전체 멤버 보기 <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <!-- Sidebar Ads -->
+        <aside class="sidebar-ads">
+          <div class="sidebar-ad-header">
+            <h3>추천 서비스</h3>
+          </div>
+          <div id="sidebarAds">
+            <!-- Sidebar ads loaded dynamically -->
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subcategory Quick Links -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2>서비스별 바로가기</h2>
+        <p>원하는 서비스를 선택하세요</p>
+      </div>
+      
+      <div class="filter-tabs" id="subcategoryLinks">
+        <!-- Subcategories loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>조찬모임에 참석해보세요!</h2>
+      <p>BNI 최강챕터의 조찬모임에서 고양·일산 지역 최고의 비즈니스 전문가들을 직접 만나보세요. 새로운 비즈니스 기회가 열립니다.</p>
+      <div class="cta-buttons">
+        <a href="visitor.html" class="cta-btn-white"><i class="fas fa-user-plus"></i> 비지터 신청하기</a>
+        <a href="about.html" class="cta-btn-outline"><i class="fas fa-info-circle"></i> BNI 더 알아보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Ads Section -->
+  <section class="footer-ads-section" id="footerAdsSection">
+    <div class="container">
+      <div class="footer-ads-grid" id="footerAds">
+        <!-- Footer ads loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>BNI 최강챕터</h3>
+          <p>고양·일산 지역 대표 비즈니스 네트워크 플랫폼입니다. 각 분야 최고의 전문가들이 함께합니다.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="KakaoTalk"><i class="fas fa-comment"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">전문 분야</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=it-dev">IT / 개발</a></li>
+            <li><a href="category.html?cat=marketing">마케팅 / 광고</a></li>
+            <li><a href="category.html?cat=legal">법률</a></li>
+            <li><a href="category.html?cat=tax">세무 / 회계</a></li>
+            <li><a href="category.html?cat=architecture">건축 / 인테리어</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">빠른 링크</h4>
+          <ul class="footer-links">
+            <li><a href="members.html">멤버 전체보기</a></li>
+            <li><a href="visitor.html">비지터 초대</a></li>
+            <li><a href="about.html">BNI 소개</a></li>
+            <li><a href="about.html#system">BNI 시스템</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">문의</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> 경기도 고양시</li>
+            <li><i class="fas fa-clock"></i> 매주 목요일 조찬모임</li>
+            <li><a href="visitor.html"><i class="fas fa-user-plus"></i> 비지터 신청</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 BNI 최강챕터. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Supabase 설정 (config.js가 있으면 먼저 로드) -->
+  <script src="config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전문가 찾기 | BNI 최강챕터</title>
+  <meta name="description" content="고양·일산 지역 각 분야 전문가를 찾아보세요. IT개발, 마케팅, 법률, 세무, 건축 등 다양한 분야의 전문가가 함께합니다.">
+  <meta name="keywords" content="고양 전문가, 일산 전문가, 홈페이지 제작, 앱 개발, 변호사, 세무사, 건축사">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .category-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      padding: var(--space-10) 0;
+    }
+    
+    .category-hero h1 {
+      color: var(--color-white);
+      margin-bottom: var(--space-2);
+    }
+    
+    .breadcrumb {
+      display: flex;
+      gap: var(--space-2);
+      align-items: center;
+      font-size: var(--font-size-sm);
+      opacity: 0.8;
+      margin-bottom: var(--space-4);
+    }
+    
+    .breadcrumb a:hover {
+      opacity: 1;
+      color: var(--color-white);
+    }
+    
+    .sidebar {
+      position: sticky;
+      top: 100px;
+    }
+    
+    .sidebar-section {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      margin-bottom: var(--space-6);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .sidebar-title {
+      font-size: var(--font-size-base);
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 2px solid var(--color-primary);
+    }
+    
+    .sidebar-list li {
+      margin-bottom: var(--space-2);
+    }
+    
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md);
+      color: var(--color-gray-700);
+      transition: all var(--transition-fast);
+    }
+    
+    .sidebar-link:hover,
+    .sidebar-link.active {
+      background-color: var(--color-gray-100);
+      color: var(--color-primary);
+    }
+    
+    .sidebar-link.active {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+    
+    .sidebar-link .count {
+      background-color: var(--color-gray-200);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+    }
+    
+    .sidebar-link.active .count {
+      background-color: rgba(255,255,255,0.2);
+    }
+    
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    
+    .result-count {
+      color: var(--color-gray-600);
+    }
+    
+    .sort-select {
+      padding: var(--space-2) var(--space-4);
+      border: 1px solid var(--color-gray-300);
+      border-radius: var(--radius-md);
+      background-color: var(--color-white);
+      cursor: pointer;
+    }
+    
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    
+    @media (min-width: 1024px) {
+      .main-content {
+        grid-template-columns: 280px 1fr;
+      }
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: var(--space-16) var(--space-4);
+      grid-column: 1 / -1;
+    }
+    
+    .empty-state i {
+      font-size: 4rem;
+      color: var(--color-gray-300);
+      margin-bottom: var(--space-6);
+    }
+    
+    .empty-state h3 {
+      margin-bottom: var(--space-3);
+      color: var(--color-gray-600);
+    }
+    
+    .empty-state p {
+      color: var(--color-gray-500);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container flex-between">
+        <span><i class="fas fa-map-marker-alt"></i> 고양·일산 지역 대표 비즈니스 네트워크</span>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
+          <div>
+            <div class="logo-text">BNI 최강챕터</div>
+            <div class="logo-sub">고양·일산 비즈니스 네트워크</div>
+          </div>
+        </a>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">홈</a></li>
+            <li><a href="category.html" class="nav-link active">전문가 찾기</a></li>
+            <li><a href="members.html" class="nav-link">멤버 전체보기</a></li>
+            <li><a href="visitor.html" class="nav-link">비지터 초대</a></li>
+            <li><a href="about.html" class="nav-link">BNI 소개</a></li>
+          </ul>
+        </nav>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="logo-text">BNI 최강챕터</span>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">홈</a></li>
+      <li><a href="category.html" class="mobile-nav-link active">전문가 찾기</a></li>
+      <li><a href="members.html" class="mobile-nav-link">멤버 전체보기</a></li>
+      <li><a href="visitor.html" class="mobile-nav-link">비지터 초대</a></li>
+      <li><a href="about.html" class="mobile-nav-link">BNI 소개</a></li>
+    </ul>
+  </div>
+
+  <!-- Category Hero -->
+  <section class="category-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">홈</a>
+        <span>/</span>
+        <span id="breadcrumbCategory">전문가 찾기</span>
+      </div>
+      <h1 id="categoryTitle">전문가 찾기</h1>
+      <p id="categoryDescription">고양·일산 지역 각 분야 전문가를 찾아보세요</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container">
+      <!-- Search Box -->
+      <div class="search-box" style="margin-bottom: var(--space-8);">
+        <input type="text" class="search-input" id="searchInput" placeholder="회사명, 이름, 업종으로 검색...">
+        <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+      
+      <div class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">업종 카테고리</h3>
+            <ul class="sidebar-list" id="categorySidebar">
+              <!-- Categories loaded dynamically -->
+            </ul>
+          </div>
+          
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">지역 필터</h3>
+            <ul class="sidebar-list">
+              <li>
+                <a href="?region=all" class="sidebar-link" data-region="all">
+                  <span>전체 지역</span>
+                </a>
+              </li>
+              <li>
+                <a href="?region=고양" class="sidebar-link" data-region="고양">
+                  <span>고양</span>
+                </a>
+              </li>
+              <li>
+                <a href="?region=일산" class="sidebar-link" data-region="일산">
+                  <span>일산</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        
+        <!-- Content Area -->
+        <div class="content-area">
+          <div class="content-header">
+            <div class="result-count" id="resultCount">총 0명의 전문가</div>
+            <select class="sort-select" id="sortSelect">
+              <option value="order">기본순</option>
+              <option value="name">이름순</option>
+              <option value="company">회사명순</option>
+            </select>
+          </div>
+          
+          <!-- Subcategory Tabs -->
+          <div class="filter-tabs" id="subcategoryTabs" style="margin-bottom: var(--space-6);">
+            <!-- Subcategories loaded dynamically -->
+          </div>
+          
+          <!-- Member Grid -->
+          <div class="member-grid" id="memberGrid">
+            <!-- Members loaded dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>찾는 전문가가 없으신가요?</h2>
+      <p>BNI 최강챕터에 문의해주시면 적합한 전문가를 연결해드립니다.</p>
+      <div class="cta-buttons">
+        <a href="visitor.html" class="cta-btn-white"><i class="fas fa-user-plus"></i> 문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Ads Section -->
+  <section class="footer-ads-section" id="footerAdsSection">
+    <div class="container">
+      <div class="footer-ads-grid" id="footerAds">
+        <!-- Footer ads loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>BNI 최강챕터</h3>
+          <p>고양·일산 지역 대표 비즈니스 네트워크 플랫폼입니다.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">전문 분야</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=it-dev">IT / 개발</a></li>
+            <li><a href="category.html?cat=marketing">마케팅 / 광고</a></li>
+            <li><a href="category.html?cat=legal">법률</a></li>
+            <li><a href="category.html?cat=tax">세무 / 회계</a></li>
+            <li><a href="category.html?cat=architecture">건축 / 인테리어</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">빠른 링크</h4>
+          <ul class="footer-links">
+            <li><a href="members.html">멤버 전체보기</a></li>
+            <li><a href="visitor.html">비지터 초대</a></li>
+            <li><a href="about.html">BNI 소개</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">문의</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> 경기도 고양시</li>
+            <li><a href="visitor.html"><i class="fas fa-user-plus"></i> 비지터 신청</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 BNI 최강챕터. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Supabase 설정 (config.js가 있으면 먼저 로드) -->
+  <script src="config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/category.js"></script>
+</body>
+</html>

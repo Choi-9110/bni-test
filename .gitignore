@@ -1,0 +1,25 @@
+# Supabase 설정 파일 (보안)
+# config.js는 Vercel 배포 시 자동 생성되므로 Git에 커밋하지 않음
+# GitHub Pages 사용 시에는 직접 수정 후 커밋 필요 (공개 저장소면 주의!)
+# config.js
+
+# 환경 변수 파일
+.env
+.env.local
+.env.*.local
+
+# 운영체제 파일
+.DS_Store
+Thumbs.db
+
+# 에디터 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 로그 파일
+*.log
+npm-debug.log*
+

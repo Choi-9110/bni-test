@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNI 소개 | BNI 최강챕터 - 고양·일산 비즈니스 네트워크</title>
+  <meta name="description" content="BNI(Business Network International)는 세계 최대의 비즈니스 네트워킹 조직입니다. BNI 고양지역 최강챕터를 소개합니다.">
+  <meta name="keywords" content="BNI, BNI 소개, BNI 시스템, 비즈니스 네트워킹, 고양 BNI, 일산 BNI">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      padding: var(--space-16) 0;
+      text-align: center;
+    }
+    
+    .about-hero h1 {
+      color: var(--color-white);
+      margin-bottom: var(--space-4);
+    }
+    
+    .about-hero p {
+      font-size: var(--font-size-lg);
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .about-section {
+      padding: var(--space-16) 0;
+    }
+    
+    .about-section:nth-child(even) {
+      background-color: var(--color-gray-100);
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+      align-items: center;
+    }
+    
+    @media (min-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .about-grid.reverse {
+        direction: rtl;
+      }
+      
+      .about-grid.reverse > * {
+        direction: ltr;
+      }
+    }
+    
+    .about-image {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    
+    .about-content h2 {
+      margin-bottom: var(--space-4);
+      color: var(--color-primary);
+    }
+    
+    .about-content p {
+      color: var(--color-gray-700);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+    
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+    
+    .feature-item {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .feature-text h4 {
+      margin-bottom: var(--space-1);
+    }
+    
+    .feature-text p {
+      font-size: var(--font-size-sm);
+      color: var(--color-gray-600);
+      margin: 0;
+    }
+    
+    .stats-section {
+      background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-800) 100%);
+      color: var(--color-white);
+      padding: var(--space-16) 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-8);
+      text-align: center;
+    }
+    
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .stat-item {
+      padding: var(--space-6);
+    }
+    
+    .stat-number {
+      font-size: var(--font-size-4xl);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+    }
+    
+    .stat-label {
+      font-size: var(--font-size-sm);
+      opacity: 0.8;
+    }
+    
+    .system-section {
+      background-color: var(--color-white);
+    }
+    
+    .system-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+    }
+    
+    .system-card {
+      background: var(--color-gray-100);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      text-align: center;
+      transition: all var(--transition-normal);
+    }
+    
+    .system-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .system-card-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-6);
+      background: var(--color-primary);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--color-white);
+    }
+    
+    .system-card h3 {
+      margin-bottom: var(--space-3);
+    }
+    
+    .system-card p {
+      color: var(--color-gray-600);
+      font-size: var(--font-size-sm);
+      line-height: 1.7;
+    }
+    
+    .chapter-intro {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-10);
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .chapter-intro h2 {
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+    
+    .chapter-intro p {
+      color: var(--color-gray-700);
+      line-height: 1.8;
+      margin-bottom: var(--space-6);
+    }
+    
+    .chapter-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+    
+    .highlight-badge {
+      background: var(--color-gray-100);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      color: var(--color-gray-700);
+    }
+    
+    .highlight-badge i {
+      color: var(--color-primary);
+      margin-right: var(--space-2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container flex-between">
+        <span><i class="fas fa-map-marker-alt"></i> 고양·일산 지역 대표 비즈니스 네트워크</span>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
+          <div>
+            <div class="logo-text">BNI 최강챕터</div>
+            <div class="logo-sub">고양·일산 비즈니스 네트워크</div>
+          </div>
+        </a>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">홈</a></li>
+            <li><a href="category.html" class="nav-link">전문가 찾기</a></li>
+            <li><a href="members.html" class="nav-link">멤버 전체보기</a></li>
+            <li><a href="visitor.html" class="nav-link">비지터 초대</a></li>
+            <li><a href="about.html" class="nav-link active">BNI 소개</a></li>
+          </ul>
+        </nav>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="logo-text">BNI 최강챕터</span>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">홈</a></li>
+      <li><a href="category.html" class="mobile-nav-link">전문가 찾기</a></li>
+      <li><a href="members.html" class="mobile-nav-link">멤버 전체보기</a></li>
+      <li><a href="visitor.html" class="mobile-nav-link">비지터 초대</a></li>
+      <li><a href="about.html" class="mobile-nav-link active">BNI 소개</a></li>
+    </ul>
+  </div>
+
+  <!-- About Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>BNI 소개</h1>
+      <p>Business Network International - 세계 최대의 비즈니스 네트워킹 조직으로, 전 세계 75개국 이상에서 30만 명 이상의 멤버가 활동하고 있습니다.</p>
+    </div>
+  </section>
+
+  <!-- What is BNI -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800" alt="BNI 비즈니스 미팅">
+        </div>
+        <div class="about-content">
+          <h2>BNI란?</h2>
+          <p>BNI(Business Network International)는 1985년 미국에서 설립된 세계 최대의 비즈니스 네트워킹 조직입니다.</p>
+          <p>"기버스 게인(Givers Gain)" - "주는 사람이 받는다"라는 철학을 바탕으로, 멤버들이 서로의 비즈니스를 소개하고 추천하는 리퍼럴 시스템을 운영합니다.</p>
+          
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="feature-text">
+                <h4>글로벌 네트워크</h4>
+                <p>전 세계 75개국 이상, 30만 명 이상의 멤버</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <div class="feature-text">
+                <h4>신뢰 기반 리퍼럴</h4>
+                <p>검증된 멤버 간의 비즈니스 추천 시스템</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="feature-text">
+                <h4>검증된 성과</h4>
+                <p>매년 수십억 달러 규모의 비즈니스 거래 창출</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">75+</div>
+          <div class="stat-label">전 세계 국가</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">300K+</div>
+          <div class="stat-label">글로벌 멤버</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">$18B+</div>
+          <div class="stat-label">연간 거래액 (USD)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">11M+</div>
+          <div class="stat-label">연간 리퍼럴 건수</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BNI System -->
+  <section class="about-section system-section" id="system">
+    <div class="container">
+      <div class="section-header">
+        <h2>BNI 시스템</h2>
+        <p>체계적인 시스템으로 비즈니스 성장을 지원합니다</p>
+      </div>
+      
+      <div class="system-cards">
+        <div class="system-card">
+          <div class="system-card-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>주간 정기 미팅</h3>
+          <p>매주 정해진 시간에 모여 서로의 비즈니스를 소개하고 리퍼럴을 교환합니다. 꾸준한 참석을 통해 신뢰를 쌓습니다.</p>
+        </div>
+        
+        <div class="system-card">
+          <div class="system-card-icon">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <h3>리퍼럴 교환</h3>
+          <p>멤버들은 서로의 잠재 고객을 연결해주는 리퍼럴을 교환합니다. 이를 통해 새로운 비즈니스 기회를 창출합니다.</p>
+        </div>
+        
+        <div class="system-card">
+          <div class="system-card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>교육 프로그램</h3>
+          <p>네트워킹 스킬, 프레젠테이션, 세일즈 기술 등 비즈니스 성장에 필요한 다양한 교육을 제공합니다.</p>
+        </div>
+        
+        <div class="system-card">
+          <div class="system-card-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>업종 독점권</h3>
+          <p>각 챕터에서 한 업종에 한 명의 멤버만 가입할 수 있어 경쟁 없이 리퍼럴을 받을 수 있습니다.</p>
+        </div>
+        
+        <div class="system-card">
+          <div class="system-card-icon">
+            <i class="fas fa-coffee"></i>
+          </div>
+          <h3>1:1 미팅</h3>
+          <p>멤버들 간 1:1 미팅을 통해 서로의 비즈니스를 깊이 이해하고 더 정확한 리퍼럴을 교환합니다.</p>
+        </div>
+        
+        <div class="system-card">
+          <div class="system-card-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>비지터 데이</h3>
+          <p>정기적으로 비지터를 초대하여 새로운 멤버를 영입하고 네트워크를 확장합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter Introduction -->
+  <section class="about-section" id="chapter">
+    <div class="container">
+      <div class="section-header">
+        <h2>BNI 최강챕터 소개</h2>
+        <p>고양·일산 지역의 대표 비즈니스 네트워크</p>
+      </div>
+      
+      <div class="chapter-intro">
+        <h2>최강챕터가 특별한 이유</h2>
+        <p>
+          BNI 최강챕터는 고양·일산 지역에서 가장 활발한 비즈니스 네트워킹 그룹입니다. 
+          IT/개발, 마케팅, 법률, 세무, 건축 등 다양한 분야의 전문가들이 함께하며, 
+          서로의 비즈니스 성장을 위해 적극적으로 리퍼럴을 교환합니다.
+        </p>
+        <p>
+          "최강"이라는 이름처럼, 우리는 고양·일산 지역에서 가장 강력한 비즈니스 네트워크를 
+          구축하고자 합니다. 매주 목요일 아침, 함께 성장하는 전문가 모임에 참여해보세요.
+        </p>
+        
+        <div class="chapter-highlights">
+          <span class="highlight-badge"><i class="fas fa-map-marker-alt"></i> 고양·일산 지역 기반</span>
+          <span class="highlight-badge"><i class="fas fa-calendar"></i> 매주 목요일 조찬</span>
+          <span class="highlight-badge"><i class="fas fa-users"></i> 다양한 업종 전문가</span>
+          <span class="highlight-badge"><i class="fas fa-handshake"></i> 활발한 리퍼럴 교환</span>
+        </div>
+        
+        <div class="mt-8">
+          <a href="visitor.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-user-plus"></i> 비지터로 참석하기
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Givers Gain -->
+  <section class="about-section" style="background: var(--color-gray-100);">
+    <div class="container">
+      <div class="about-grid reverse">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="BNI 팀워크">
+        </div>
+        <div class="about-content">
+          <h2>Givers Gain - 주는 사람이 받는다</h2>
+          <p>BNI의 핵심 철학인 "Givers Gain"은 먼저 다른 사람을 도와주면 결국 나도 도움을 받게 된다는 것입니다.</p>
+          <p>이 철학을 바탕으로 멤버들은 서로의 비즈니스를 적극적으로 추천하고, 그 결과 모두가 함께 성장합니다.</p>
+          
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="feature-text">
+                <h4>먼저 주는 마음</h4>
+                <p>받기 전에 먼저 주는 것이 BNI 문화의 핵심입니다</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <div class="feature-text">
+                <h4>선순환 구조</h4>
+                <p>서로 돕는 문화가 모두의 성장으로 이어집니다</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="feature-text">
+                <h4>함께하는 성공</h4>
+                <p>개인의 성공이 아닌 함께하는 성공을 추구합니다</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>지금 바로 참여하세요</h2>
+      <p>BNI 최강챕터의 조찬모임에서 고양·일산 지역 최고의 비즈니스 전문가들을 만나보세요.</p>
+      <div class="cta-buttons">
+        <a href="visitor.html" class="cta-btn-white"><i class="fas fa-user-plus"></i> 비지터 신청</a>
+        <a href="members.html" class="cta-btn-outline"><i class="fas fa-users"></i> 멤버 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Ads Section -->
+  <section class="footer-ads-section" id="footerAdsSection">
+    <div class="container">
+      <div class="footer-ads-grid" id="footerAds">
+        <!-- Footer ads loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>BNI 최강챕터</h3>
+          <p>고양·일산 지역 대표 비즈니스 네트워크 플랫폼입니다.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">전문 분야</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=it-dev">IT / 개발</a></li>
+            <li><a href="category.html?cat=marketing">마케팅 / 광고</a></li>
+            <li><a href="category.html?cat=legal">법률</a></li>
+            <li><a href="category.html?cat=tax">세무 / 회계</a></li>
+            <li><a href="category.html?cat=architecture">건축 / 인테리어</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">빠른 링크</h4>
+          <ul class="footer-links">
+            <li><a href="members.html">멤버 전체보기</a></li>
+            <li><a href="visitor.html">비지터 초대</a></li>
+            <li><a href="#system">BNI 시스템</a></li>
+            <li><a href="#chapter">최강챕터 소개</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">문의</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> 경기도 고양시</li>
+            <li><i class="fas fa-clock"></i> 매주 목요일 조찬모임</li>
+            <li><a href="visitor.html"><i class="fas fa-user-plus"></i> 비지터 신청</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 BNI 최강챕터. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Supabase 설정 (config.js가 있으면 먼저 로드) -->
+  <script src="config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

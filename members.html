@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>멤버 전체보기 | BNI 최강챕터 - 고양·일산 비즈니스 네트워크</title>
+  <meta name="description" content="BNI 고양지역 최강챕터의 모든 멤버를 확인하세요. IT개발, 마케팅, 법률, 세무, 건축 등 각 분야 전문가가 함께합니다.">
+  <meta name="keywords" content="BNI 멤버, 고양 전문가, 일산 전문가, 비즈니스 네트워크">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container flex-between">
+        <span><i class="fas fa-map-marker-alt"></i> 고양·일산 지역 대표 비즈니스 네트워크</span>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
+          <div>
+            <div class="logo-text">BNI 최강챕터</div>
+            <div class="logo-sub">고양·일산 비즈니스 네트워크</div>
+          </div>
+        </a>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">홈</a></li>
+            <li><a href="category.html" class="nav-link">전문가 찾기</a></li>
+            <li><a href="members.html" class="nav-link active">멤버 전체보기</a></li>
+            <li><a href="visitor.html" class="nav-link">비지터 초대</a></li>
+            <li><a href="about.html" class="nav-link">BNI 소개</a></li>
+          </ul>
+        </nav>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="logo-text">BNI 최강챕터</span>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">홈</a></li>
+      <li><a href="category.html" class="mobile-nav-link">전문가 찾기</a></li>
+      <li><a href="members.html" class="mobile-nav-link active">멤버 전체보기</a></li>
+      <li><a href="visitor.html" class="mobile-nav-link">비지터 초대</a></li>
+      <li><a href="about.html" class="mobile-nav-link">BNI 소개</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" style="padding: var(--space-10) 0;">
+    <div class="container">
+      <h1>BNI 최강챕터 멤버</h1>
+      <p>고양·일산 지역 최고의 비즈니스 전문가들을 만나보세요</p>
+    </div>
+  </section>
+
+  <!-- Members Section -->
+  <section class="section">
+    <div class="container">
+      <!-- Search Box -->
+      <div class="search-box">
+        <input type="text" class="search-input" id="searchInput" placeholder="회사명, 이름, 업종으로 검색...">
+        <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+      
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">전체</button>
+        <button class="filter-tab" data-region="고양">고양</button>
+        <button class="filter-tab" data-region="일산">일산</button>
+      </div>
+      
+      <!-- Category Filter -->
+      <div class="filter-tabs" id="categoryFilter" style="margin-bottom: var(--space-8);">
+        <!-- Categories loaded dynamically -->
+      </div>
+      
+      <!-- Result Count -->
+      <div class="flex-between mb-8">
+        <p class="text-muted" id="resultCount">총 0명의 멤버</p>
+      </div>
+      
+      <!-- Member Grid -->
+      <div class="member-grid" id="allMemberGrid">
+        <!-- Members loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>BNI 최강챕터의 멤버가 되세요</h2>
+      <p>검증된 비즈니스 네트워크에서 새로운 기회를 만나보세요.</p>
+      <div class="cta-buttons">
+        <a href="visitor.html" class="cta-btn-white"><i class="fas fa-user-plus"></i> 비지터 신청</a>
+        <a href="about.html" class="cta-btn-outline"><i class="fas fa-info-circle"></i> BNI 더 알아보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Ads Section -->
+  <section class="footer-ads-section" id="footerAdsSection">
+    <div class="container">
+      <div class="footer-ads-grid" id="footerAds">
+        <!-- Footer ads loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>BNI 최강챕터</h3>
+          <p>고양·일산 지역 대표 비즈니스 네트워크 플랫폼입니다.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">전문 분야</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=it-dev">IT / 개발</a></li>
+            <li><a href="category.html?cat=marketing">마케팅 / 광고</a></li>
+            <li><a href="category.html?cat=legal">법률</a></li>
+            <li><a href="category.html?cat=tax">세무 / 회계</a></li>
+            <li><a href="category.html?cat=architecture">건축 / 인테리어</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">빠른 링크</h4>
+          <ul class="footer-links">
+            <li><a href="members.html">멤버 전체보기</a></li>
+            <li><a href="visitor.html">비지터 초대</a></li>
+            <li><a href="about.html">BNI 소개</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">문의</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> 경기도 고양시</li>
+            <li><a href="visitor.html"><i class="fas fa-user-plus"></i> 비지터 신청</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 BNI 최강챕터. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Supabase 설정 (config.js가 있으면 먼저 로드) -->
+  <script src="config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Members Page Logic
+    const MembersPage = {
+      currentRegion: null,
+      currentCategory: null,
+      searchQuery: '',
+      
+      async init() {
+        await this.loadCategoryFilter();
+        await this.loadMembers();
+        this.bindEvents();
+      },
+      
+      async loadCategoryFilter() {
+        const container = document.getElementById('categoryFilter');
+        const categories = await DataService.getCategories();
+        
+        let html = '<button class="filter-tab active" data-cat="">전체 업종</button>';
+        html += categories.map(cat => `
+          <button class="filter-tab" data-cat="${cat.id}">${cat.name}</button>
+        `).join('');
+        
+        container.innerHTML = html;
+        
+        // Bind category filter events
+        container.querySelectorAll('.filter-tab').forEach(tab => {
+          tab.addEventListener('click', () => {
+            container.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            this.currentCategory = tab.dataset.cat || null;
+            this.loadMembers();
+          });
+        });
+      },
+      
+      async loadMembers() {
+        const filters = {};
+        
+        if (this.currentRegion) {
+          filters.region = this.currentRegion;
+        }
+        if (this.currentCategory) {
+          filters.categoryId = this.currentCategory;
+        }
+        if (this.searchQuery) {
+          filters.search = this.searchQuery;
+        }
+        
+        const members = await DataService.getMembers(filters);
+        
+        // Update count
+        document.getElementById('resultCount').textContent = `총 ${members.length}명의 멤버`;
+        
+        // Render
+        this.renderMembers(members);
+      },
+      
+      renderMembers(members) {
+        const grid = document.getElementById('allMemberGrid');
+        
+        if (members.length === 0) {
+          grid.innerHTML = `
+            <div class="text-center" style="grid-column: 1/-1; padding: 3rem;">
+              <i class="fas fa-search" style="font-size: 3rem; color: var(--color-gray-300); margin-bottom: 1rem;"></i>
+              <p style="color: var(--color-gray-500);">검색 결과가 없습니다.</p>
+            </div>
+          `;
+          return;
+        }
+        
+        grid.innerHTML = members.map(member => {
+          const categoryNames = {
+            'it-dev': 'IT / 개발',
+            'marketing': '마케팅 / 광고',
+            'legal': '법률',
+            'tax': '세무 / 회계',
+            'architecture': '건축 / 인테리어',
+            'local-business': '지역 비즈니스'
+          };
+          const categoryName = categoryNames[member.category_id] || '';
+          const tags = member.tags?.slice(0, 3) || [];
+          
+          return `
+            <div class="member-card">
+              <a href="member.html?id=${member.id}">
+                <div class="member-img-wrapper">
+                  <img src="${member.profile_img || 'https://via.placeholder.com/400x300?text=Profile'}" 
+                       alt="${member.name}" class="member-img" loading="lazy">
+                  ${member.is_featured ? '<span class="member-badge">추천</span>' : ''}
+                </div>
+              </a>
+              <div class="member-body">
+                <div class="member-category">${categoryName}</div>
+                <h3 class="member-name">
+                  <a href="member.html?id=${member.id}">${member.name}</a>
+                </h3>
+                <p class="member-company">${member.company} · ${member.position}</p>
+                <p class="member-usp">${member.usp_summary || ''}</p>
+                <div class="member-tags">
+                  ${tags.map(tag => `<span class="member-tag">${tag}</span>`).join('')}
+                </div>
+                <div class="member-actions">
+                  ${member.phone ? `
+                    <a href="tel:${member.phone}" class="member-action-btn phone">
+                      <i class="fas fa-phone"></i>
+                    </a>
+                  ` : ''}
+                  ${member.kakao_url ? `
+                    <a href="${member.kakao_url}" target="_blank" class="member-action-btn kakao">
+                      <i class="fas fa-comment"></i>
+                    </a>
+                  ` : ''}
+                  ${member.homepage ? `
+                    <a href="${member.homepage}" target="_blank" class="member-action-btn web">
+                      <i class="fas fa-globe"></i>
+                    </a>
+                  ` : ''}
+                  ${member.sns_url ? `
+                    <a href="${member.sns_url}" target="_blank" class="member-action-btn sns">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  ` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      },
+      
+      bindEvents() {
+        // Region filter
+        const filterTabs = document.getElementById('filterTabs');
+        filterTabs.querySelectorAll('.filter-tab').forEach(tab => {
+          tab.addEventListener('click', () => {
+            filterTabs.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            if (tab.dataset.filter === 'all') {
+              this.currentRegion = null;
+            } else if (tab.dataset.region) {
+              this.currentRegion = tab.dataset.region;
+            }
+            
+            this.loadMembers();
+          });
+        });
+        
+        // Search
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        
+        searchInput.addEventListener('keyup', (e) => {
+          if (e.key === 'Enter') {
+            this.searchQuery = searchInput.value;
+            this.loadMembers();
+          }
+        });
+        
+        searchBtn.addEventListener('click', () => {
+          this.searchQuery = searchInput.value;
+          this.loadMembers();
+        });
+      }
+    };
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      MembersPage.init();
+    });
+  </script>
+</body>
+</html>

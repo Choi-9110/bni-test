@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비지터 초대 | BNI 최강챕터 - 고양·일산 조찬모임</title>
+  <meta name="description" content="BNI 고양지역 최강챕터 조찬모임에 비지터로 참석해보세요. 고양·일산 지역 최고의 비즈니스 전문가들을 만나 새로운 비즈니스 기회를 얻으세요.">
+  <meta name="keywords" content="BNI 조찬모임, 고양 조찬모임, 일산 비즈니스 모임, 비지터 신청, BNI 최강챕터">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .visitor-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      padding: var(--space-16) 0;
+      text-align: center;
+    }
+    
+    .visitor-hero h1 {
+      color: var(--color-white);
+      margin-bottom: var(--space-4);
+    }
+    
+    .visitor-hero p {
+      font-size: var(--font-size-lg);
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-12);
+    }
+    
+    .info-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .info-card-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-4);
+      background: var(--color-gray-100);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--color-primary);
+    }
+    
+    .info-card h3 {
+      margin-bottom: var(--space-3);
+    }
+    
+    .info-card p {
+      color: var(--color-gray-600);
+      font-size: var(--font-size-sm);
+    }
+    
+    .form-section {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .form-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .form-header {
+      text-align: center;
+      margin-bottom: var(--space-8);
+    }
+    
+    .form-header h2 {
+      margin-bottom: var(--space-2);
+    }
+    
+    .form-header p {
+      color: var(--color-gray-600);
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+    
+    @media (min-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    
+    .form-required {
+      color: var(--color-primary);
+    }
+    
+    .form-hint {
+      font-size: var(--font-size-xs);
+      color: var(--color-gray-500);
+      margin-top: var(--space-1);
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: var(--space-4);
+      font-size: var(--font-size-lg);
+      margin-top: var(--space-6);
+    }
+    
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: var(--space-8);
+    }
+    
+    .success-message.show {
+      display: block;
+    }
+    
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-6);
+      background: var(--color-success);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--color-white);
+    }
+    
+    .meeting-info {
+      background: var(--color-gray-100);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      margin-top: var(--space-12);
+    }
+    
+    .meeting-info h3 {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+    
+    .meeting-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-6);
+    }
+    
+    .meeting-detail {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    
+    .meeting-detail i {
+      width: 40px;
+      height: 40px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .meeting-detail-text strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+    
+    .meeting-detail-text span {
+      font-size: var(--font-size-sm);
+      color: var(--color-gray-600);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container flex-between">
+        <span><i class="fas fa-map-marker-alt"></i> 고양·일산 지역 대표 비즈니스 네트워크</span>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
+          <div>
+            <div class="logo-text">BNI 최강챕터</div>
+            <div class="logo-sub">고양·일산 비즈니스 네트워크</div>
+          </div>
+        </a>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">홈</a></li>
+            <li><a href="category.html" class="nav-link">전문가 찾기</a></li>
+            <li><a href="members.html" class="nav-link">멤버 전체보기</a></li>
+            <li><a href="visitor.html" class="nav-link active">비지터 초대</a></li>
+            <li><a href="about.html" class="nav-link">BNI 소개</a></li>
+          </ul>
+        </nav>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="logo-text">BNI 최강챕터</span>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">홈</a></li>
+      <li><a href="category.html" class="mobile-nav-link">전문가 찾기</a></li>
+      <li><a href="members.html" class="mobile-nav-link">멤버 전체보기</a></li>
+      <li><a href="visitor.html" class="mobile-nav-link active">비지터 초대</a></li>
+      <li><a href="about.html" class="mobile-nav-link">BNI 소개</a></li>
+    </ul>
+  </div>
+
+  <!-- Visitor Hero -->
+  <section class="visitor-hero">
+    <div class="container">
+      <h1>조찬모임에 초대합니다</h1>
+      <p>BNI 최강챕터에서 고양·일산 지역 최고의 비즈니스 전문가들을 만나보세요. 새로운 비즈니스 기회가 열립니다.</p>
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>신뢰할 수 있는 네트워크</h3>
+          <p>BNI는 세계 최대의 비즈니스 네트워킹 조직으로, 검증된 전문가들이 함께합니다.</p>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-card-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>다양한 업종의 전문가</h3>
+          <p>IT, 마케팅, 법률, 세무, 건축 등 다양한 분야의 전문가를 한 자리에서 만나보세요.</p>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-card-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>비즈니스 성장 기회</h3>
+          <p>리퍼럴을 통한 새로운 고객 확보와 비즈니스 성장의 기회를 얻으세요.</p>
+        </div>
+      </div>
+      
+      <!-- Meeting Info -->
+      <div class="meeting-info">
+        <h3>조찬모임 안내</h3>
+        <div class="meeting-details">
+          <div class="meeting-detail">
+            <i class="fas fa-calendar-alt"></i>
+            <div class="meeting-detail-text">
+              <strong>모임 일시</strong>
+              <span>매주 목요일 오전 7:00</span>
+            </div>
+          </div>
+          <div class="meeting-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="meeting-detail-text">
+              <strong>모임 장소</strong>
+              <span>경기도 고양시 (상세 주소 별도 안내)</span>
+            </div>
+          </div>
+          <div class="meeting-detail">
+            <i class="fas fa-clock"></i>
+            <div class="meeting-detail-text">
+              <strong>소요 시간</strong>
+              <span>약 1시간 30분</span>
+            </div>
+          </div>
+          <div class="meeting-detail">
+            <i class="fas fa-utensils"></i>
+            <div class="meeting-detail-text">
+              <strong>조식 제공</strong>
+              <span>간단한 조식이 제공됩니다</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Inquiry Form -->
+      <div class="form-section" style="margin-top: var(--space-12);">
+        <div class="form-card">
+          <div class="form-header">
+            <h2>비지터 신청</h2>
+            <p>아래 양식을 작성해주시면 담당자가 연락드립니다.</p>
+          </div>
+          
+          <form id="visitorForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  이름 <span class="form-required">*</span>
+                </label>
+                <input type="text" class="form-input" name="name" required placeholder="홍길동">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">
+                  연락처 <span class="form-required">*</span>
+                </label>
+                <input type="tel" class="form-input" name="phone" required placeholder="010-0000-0000">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">이메일</label>
+                <input type="email" class="form-input" name="email" placeholder="email@example.com">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">회사/소속</label>
+                <input type="text" class="form-input" name="company" placeholder="회사명">
+              </div>
+            </div>
+            
+            <div class="form-group full-width">
+              <label class="form-label">관심 업종</label>
+              <select class="form-select" name="interest_category" id="interestCategory">
+                <option value="">선택해주세요</option>
+                <!-- Categories loaded dynamically -->
+              </select>
+            </div>
+            
+            <div class="form-group full-width">
+              <label class="form-label">문의 내용</label>
+              <textarea class="form-textarea" name="message" placeholder="궁금하신 점이나 문의 내용을 입력해주세요."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary submit-btn">
+              <i class="fas fa-paper-plane"></i> 비지터 신청하기
+            </button>
+          </form>
+          
+          <div class="success-message" id="successMessage">
+            <div class="success-icon">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3>신청이 완료되었습니다!</h3>
+            <p>담당자가 빠른 시일 내에 연락드리겠습니다.</p>
+            <button class="btn btn-secondary mt-4" onclick="location.reload()">
+              다시 신청하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Ads Section -->
+  <section class="footer-ads-section" id="footerAdsSection">
+    <div class="container">
+      <div class="footer-ads-grid" id="footerAds">
+        <!-- Footer ads loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>BNI 최강챕터</h3>
+          <p>고양·일산 지역 대표 비즈니스 네트워크 플랫폼입니다.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">전문 분야</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=it-dev">IT / 개발</a></li>
+            <li><a href="category.html?cat=marketing">마케팅 / 광고</a></li>
+            <li><a href="category.html?cat=legal">법률</a></li>
+            <li><a href="category.html?cat=tax">세무 / 회계</a></li>
+            <li><a href="category.html?cat=architecture">건축 / 인테리어</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">빠른 링크</h4>
+          <ul class="footer-links">
+            <li><a href="members.html">멤버 전체보기</a></li>
+            <li><a href="visitor.html">비지터 초대</a></li>
+            <li><a href="about.html">BNI 소개</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">문의</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> 경기도 고양시</li>
+            <li><i class="fas fa-clock"></i> 매주 목요일 조찬모임</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 BNI 최강챕터. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Supabase 설정 (config.js가 있으면 먼저 로드) -->
+  <script src="config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Visitor Form Logic
+    const VisitorPage = {
+      async init() {
+        await this.loadCategories();
+        this.bindEvents();
+      },
+      
+      async loadCategories() {
+        const select = document.getElementById('interestCategory');
+        const categories = await DataService.getCategories();
+        
+        categories.forEach(cat => {
+          const option = document.createElement('option');
+          option.value = cat.id;
+          option.textContent = cat.name;
+          select.appendChild(option);
+        });
+      },
+      
+      bindEvents() {
+        const form = document.getElementById('visitorForm');
+        const successMessage = document.getElementById('successMessage');
+        
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const formData = new FormData(form);
+          const data = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            email: formData.get('email'),
+            company: formData.get('company'),
+            interest_category: formData.get('interest_category'),
+            message: formData.get('message'),
+            inquiry_type: 'visitor'
+          };
+          
+          // Validate required fields
+          if (!data.name || !data.phone) {
+            alert('이름과 연락처는 필수 입력 항목입니다.');
+            return;
+          }
+          
+          // Submit inquiry
+          const submitBtn = form.querySelector('.submit-btn');
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 제출 중...';
+          
+          try {
+            const result = await DataService.submitInquiry(data);
+            
+            if (result) {
+              form.style.display = 'none';
+              successMessage.classList.add('show');
+            } else {
+              throw new Error('Failed to submit');
+            }
+          } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('신청 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> 비지터 신청하기';
+          }
+        });
+      }
+    };
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      VisitorPage.init();
+    });
+  </script>
+</body>
+</html>

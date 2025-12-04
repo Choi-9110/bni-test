@@ -1,0 +1,16 @@
+{
+  "name": "bni-goyang",
+  "version": "1.0.0",
+  "description": "BNI 최강챕터 - 고양·일산 비즈니스 네트워크 플랫폼",
+  "scripts": {
+    "build": "node scripts/build-config.js"
+  },
+  "keywords": [
+    "bni",
+    "business-network",
+    "goyang",
+    "ilsan"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>멤버 상세 | BNI 최강챕터</title>
+  <meta name="description" content="BNI 최강챕터 멤버 상세 정보">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .member-hero {
+      background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-900) 100%);
+      color: var(--color-white);
+      padding: var(--space-10) 0;
+    }
+    
+    .member-hero h1 {
+      color: var(--color-white);
+    }
+    
+    .breadcrumb {
+      display: flex;
+      gap: var(--space-2);
+      align-items: center;
+      font-size: var(--font-size-sm);
+      opacity: 0.8;
+      margin-bottom: var(--space-4);
+    }
+    
+    .breadcrumb a:hover {
+      opacity: 1;
+      color: var(--color-white);
+    }
+    
+    .member-detail {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      margin-top: -60px;
+    }
+    
+    @media (min-width: 1024px) {
+      .member-detail {
+        grid-template-columns: 350px 1fr;
+      }
+    }
+    
+    .member-profile-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      position: sticky;
+      top: 100px;
+    }
+    
+    .profile-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .profile-info {
+      padding: var(--space-6);
+    }
+    
+    .profile-category {
+      color: var(--color-primary);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+    }
+    
+    .profile-name {
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-1);
+    }
+    
+    .profile-company {
+      color: var(--color-gray-600);
+      margin-bottom: var(--space-4);
+    }
+    
+    .profile-region {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--color-gray-100);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      color: var(--color-gray-700);
+      margin-bottom: var(--space-4);
+    }
+    
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: var(--font-size-base);
+      transition: all var(--transition-fast);
+    }
+    
+    .contact-btn.phone {
+      background-color: var(--color-success);
+      color: var(--color-white);
+    }
+    
+    .contact-btn.kakao {
+      background-color: #FEE500;
+      color: #000000;
+    }
+    
+    .contact-btn.web {
+      background-color: var(--color-gray-800);
+      color: var(--color-white);
+    }
+    
+    .contact-btn.sns {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: var(--color-white);
+    }
+    
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .member-content {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-8);
+    }
+    
+    .content-section {
+      margin-bottom: var(--space-8);
+    }
+    
+    .content-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .content-title {
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 2px solid var(--color-primary);
+    }
+    
+    .usp-summary {
+      font-size: var(--font-size-lg);
+      line-height: 1.8;
+      color: var(--color-gray-700);
+    }
+    
+    .usp-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    
+    .usp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+    
+    .usp-list li i {
+      color: var(--color-primary);
+      margin-top: 4px;
+    }
+    
+    .usp-image {
+      width: 100%;
+      max-width: 600px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      margin-top: var(--space-4);
+    }
+    
+    .tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    
+    .tag-item {
+      background: var(--color-gray-100);
+      color: var(--color-gray-700);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+    }
+    
+    .related-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-6);
+    }
+    
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container flex-between">
+        <span><i class="fas fa-map-marker-alt"></i> 고양·일산 지역 대표 비즈니스 네트워크</span>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
+          <div>
+            <div class="logo-text">BNI 최강챕터</div>
+            <div class="logo-sub">고양·일산 비즈니스 네트워크</div>
+          </div>
+        </a>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">홈</a></li>
+            <li><a href="category.html" class="nav-link">전문가 찾기</a></li>
+            <li><a href="members.html" class="nav-link active">멤버 전체보기</a></li>
+            <li><a href="visitor.html" class="nav-link">비지터 초대</a></li>
+            <li><a href="about.html" class="nav-link">BNI 소개</a></li>
+          </ul>
+        </nav>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="logo-text">BNI 최강챕터</span>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">홈</a></li>
+      <li><a href="category.html" class="mobile-nav-link">전문가 찾기</a></li>
+      <li><a href="members.html" class="mobile-nav-link active">멤버 전체보기</a></li>
+      <li><a href="visitor.html" class="mobile-nav-link">비지터 초대</a></li>
+      <li><a href="about.html" class="mobile-nav-link">BNI 소개</a></li>
+    </ul>
+  </div>
+
+  <!-- Member Hero -->
+  <section class="member-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">홈</a>
+        <span>/</span>
+        <a href="members.html">멤버</a>
+        <span>/</span>
+        <span id="breadcrumbName">멤버 상세</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Member Detail -->
+  <section class="section">
+    <div class="container">
+      <div class="member-detail" id="memberDetail">
+        <div class="loading">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      
+      <!-- Related Members -->
+      <div class="content-section" style="margin-top: var(--space-12);">
+        <h2 class="content-title">같은 분야 전문가</h2>
+        <div class="related-members" id="relatedMembers">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>비즈니스 네트워크에 참여하세요</h2>
+      <p>BNI 최강챕터에서 새로운 비즈니스 기회를 만나보세요.</p>
+      <div class="cta-buttons">
+        <a href="visitor.html" class="cta-btn-white"><i class="fas fa-user-plus"></i> 비지터 신청</a>
+        <a href="about.html" class="cta-btn-outline"><i class="fas fa-info-circle"></i> BNI 더 알아보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Ads Section -->
+  <section class="footer-ads-section" id="footerAdsSection">
+    <div class="container">
+      <div class="footer-ads-grid" id="footerAds">
+        <!-- Footer ads loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>BNI 최강챕터</h3>
+          <p>고양·일산 지역 대표 비즈니스 네트워크 플랫폼입니다.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">전문 분야</h4>
+          <ul class="footer-links">
+            <li><a href="category.html?cat=it-dev">IT / 개발</a></li>
+            <li><a href="category.html?cat=marketing">마케팅 / 광고</a></li>
+            <li><a href="category.html?cat=legal">법률</a></li>
+            <li><a href="category.html?cat=tax">세무 / 회계</a></li>
+            <li><a href="category.html?cat=architecture">건축 / 인테리어</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">빠른 링크</h4>
+          <ul class="footer-links">
+            <li><a href="members.html">멤버 전체보기</a></li>
+            <li><a href="visitor.html">비지터 초대</a></li>
+            <li><a href="about.html">BNI 소개</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">문의</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> 경기도 고양시</li>
+            <li><a href="visitor.html"><i class="fas fa-user-plus"></i> 비지터 신청</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 BNI 최강챕터. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Supabase 설정 (config.js가 있으면 먼저 로드) -->
+  <script src="config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/member.js"></script>
+</body>
+</html>
